@@ -17,7 +17,7 @@ import random   # o pacote random é necessário para gerar números aleatórios
 def randomInitializer():
   '''
   Parâmetros:
-    - nenhum parâmetro é necessário
+    - nenhum parâmetro é necessário.
   
   Retorna:
     - uma lista com valores aleatórios de A e B.
@@ -33,7 +33,24 @@ Imagine que você tenha começado a cozinhar há pouco tempo e não tem certeza 
 
 ![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/e258221518869aa1c6561bb75b99476c4734108e.svg)
 
-O primeiro passo é encontrar a diferença entre "y" (valor real) e "^y" (valor previsto). Caso nosso modelo seja perfeito, os dois termos serão iguais, logo o MSE será zero. Portanto, quanto mais próximo de zero o MSE, melhor nosso modelo.
+* O primeiro passo é encontrar o quadrado da diferença entre "y" (valor real) e "^y" (valor previsto). Caso nosso modelo seja perfeito, os dois termos serão iguais, logo o MSE será zero. Portanto, quanto mais próximo de zero o MSE, melhor nosso modelo.
 
 Ex: Acima previmos que três xícaras custam 30 reais, e é exatamente o que os dados dizem também, logo nossa MSE será zero.
+* Depois de encontrar o quadrado da diferença de todos os termos, iremos soma-los e dividir pelo número de termos, encontrando a média. Implementaremos da seguninte forma: 
 
+```python
+def meanSquaredError(weights, dataset):
+  '''
+  Parâmetros:
+    - weights: Os pesos são os valores que geramos anteriormente, o "a" e "b".
+    - dataset: Lista com os valores "reais".
+  
+  Retorna:
+    - o erro quadratico médio de seu modelo atual.
+  '''
+    squaredError = 0
+    for indc in dataset:
+        squaredError += (((weights[0]*indc[0])+weights[1]) - indc[1])**2    
+    
+    return squaredError / (2*len(DS)) 
+```
