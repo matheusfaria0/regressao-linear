@@ -48,9 +48,21 @@ def meanSquaredError(weights, dataset):
   Retorna:
     - o erro quadratico médio de seu modelo atual.
   '''
-    squaredError = 0
-    for indc in dataset:
-        squaredError += (((weights[0]*indc[0])+weights[1]) - indc[1])**2    
-    
-    return squaredError / (2*len(DS)) 
+  
+  squaredError = 0
+  for indc in dataset:
+      squaredError += (((weights[0]*indc[0])+weights[1]) - indc[1])**2    
+  return squaredError / (2*len(DS)) 
 ```
+
+### Gradiente de descida:
+Agora que sabemos se nosso modelo está bom ou ruim, como podemos melhora-lo? Usaremos o método do gradiente de descida, são eles que fazem as inteligências artificiais aprenderem. Imagine que você é um alpinista e precisa descer uma montanha. Você deve olhar ao seu redor e ver em qual direção você deve andar para chegar ao chão mais rápido (imagine que a altura seja equivalente ao erro de nosso modelo, ou seja, chegar ao chão é ter o menor erro).
+
+
+
+
+
+
+
+
+
