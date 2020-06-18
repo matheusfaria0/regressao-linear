@@ -4,4 +4,36 @@ Na regressão linear, sempre buscaremos uma linha que melhor se encaixa em nosso
 
 ![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/download.png "Exemplo de regressão linear.")
 
-Para nós, é extremamente simples traçar uma linha entre pontos, já que temos nossa visão que nos permite fazer isso, mas pense que precisamos implementar isso em um computador, então precisaremos encontrar meios matemáticos de descrever essa reta.
+Para nós, é extremamente simples traçar uma linha entre pontos, já que temos nossa visão que nos permite fazer isso, mas pense que precisamos implementar isso em um computador, então precisaremos encontrar meios matemáticos de descrever essa reta. Faremos o seguinte.
+
+### Equação de reta:
+Toda reta pode ser expressada pela seguinte equação: **y=ax+b**.
+ Com isso, podemos deixar nossa meta mais clara, precisamos encontrar **o melhor coeficiente angular da reta (a) e o melhor coeficiente linear (b)**.
+ Para isso, vamos iniciar os coeficientes com valores aleatórios e vamos melhorando eles aos poucos. Faremos isso utilizando o método do gradiente de descida (falaremos mais dele mais para frente). Implementaremos o peso aleatório da seguinte forma:
+
+```python
+import random   # o pacote random é necessário para gerar números aleatórios.
+
+def randomInitializer():
+  '''
+  Parâmetros:
+    - nenhum parâmetro é necessário
+  
+  Retorna:
+    - uma lista com valores aleatórios de A e B.
+  '''
+  
+  a = random.random()
+  b = random.random()
+  return (a,b)
+```
+
+### Funções de custo:
+Imagine que você tenha começado a cozinhar há pouco tempo e não tem certeza se sua comida está boa ou não, então você decide dar para alguma outra pessoa provar e te dar uma nota. Você saberá se está cozinhando certo ou não dependendo da nota da pessoa. É exatamente isso que as funções de custo fazem, elas dizem o quão bom nosso modelo preditivo é. Existem muitas funções de custo, aqui usaremos a de erro quadrádico médio. Ela é definida pela seguinte fórmula:
+
+![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/e258221518869aa1c6561bb75b99476c4734108e.svg)
+
+O primeiro passo é encontrar a diferença entre "y" (valor real) e "^y" (valor previsto). Caso nosso modelo seja perfeito, os dois termos serão iguais, logo o MSE será zero. Portanto, quanto mais próximo de zero o MSE, melhor nosso modelo.
+
+Ex: Acima previmos que três xícaras custam 30 reais, e é exatamente o que os dados dizem também, logo nossa MSE será zero.
+
