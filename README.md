@@ -1,3 +1,5 @@
+# não esta pronto
+
 ### Observações:
 Implementaremos o algorítmo utilizando a linguagem Python. Por ser uma linguagem de alto nível, sacrificaremos um pouco de eficiência, mas tornaremos nosso código muito mais legível para quem não tem tanta experiência com programação. Caso estivessemos desenolvendo um algorítimo de visão computacional, seria inviável utilizar Python, já que eficiência importa muito nessas aplicações, como em carros autônomos, uma diferença de um segundo entre aplicações pode salvar uma vida no trânsito.
 
