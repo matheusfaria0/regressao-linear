@@ -12,7 +12,7 @@ Para nós, é extremamente simples traçar uma linha entre pontos, já que temos
 ### Equação de reta:
 Toda reta pode ser expressada pela seguinte equação: **y=ax+b**.
  
- Com isso, podemos deixar nossa meta mais clara, precisamos encontrar **o melhor coeficiente angular da reta (a) e o melhor coeficiente linear (b)**.
+ Com isso, podemos deixar nossa meta mais clara, precisamos encontrar o melhor valor de "a" e "b" para que nosso erro seja o menor possível (veremos como calcular o erro logo em seguida).
  Para isso, vamos iniciar os coeficientes com valores aleatórios e vamos melhorando eles aos poucos utilizando o método do gradiente de descida (falaremos mais dele mais para frente). Implementaremos o peso aleatório da seguinte forma:
 
 ```python
@@ -63,12 +63,9 @@ def erroQuadraticoMedio(Y, Y_true):
 ```
 
 ### Gradiente de descida:
-Agora que sabemos se nosso modelo está bom ou ruim, como podemos melhora-lo? Usaremos o método do gradiente de descida, são eles que fazem as inteligências artificiais aprenderem. Imagine que você é um alpinista e está em uma montanha muito alta e deseja chegar ao chão. Para isso você deve olhar ao seu redor e dar pequenos passos na direção que te levar na menor altura. O gradiente de descida faz exatamente isso, onde a altura seria o erro de nosso modelo.
+Agora que sabemos se nosso modelo está bom ou ruim, como podemos melhora-lo? Usaremos o método do gradiente de descida, são eles que fazem as inteligências artificiais aprenderem. Imagine que você é um alpinista e está em uma montanha muito alta e deseja chegar ao chão. Para isso você deve olhar ao seu redor e dar pequenos passos na direção que te levar na menor altura. O gradiente de descida faz exatamente isso, onde a altura seria o erro de nosso modelo. Ele é definido pela seguinte fórmula:
+![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/sgd.png)
 
-![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/gradiente.png)
-
-
-
-
+A par
 
 
