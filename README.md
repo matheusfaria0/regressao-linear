@@ -4,12 +4,12 @@ Na regressão linear, sempre buscaremos uma linha que melhor se encaixa em nosso
 
 ![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/download.png "Exemplo de regressão linear.")
 
-Para nós, é extremamente simples traçar uma linha entre pontos, já que temos nossa visão que nos permite fazer isso, mas pense que precisamos implementar isso em um computador, então precisaremos encontrar meios matemáticos de descrever essa reta. Faremos o seguinte.
+Para nós, é extremamente simples traçar uma linha entre pontos, já que temos nossa visão que nos permite fazer isso, mas pense que precisamos implementar isso em um computador, então precisaremos encontrar meios matemáticos de descrever essa reta. Faremos o seguinte:
 
 ### Equação de reta:
 Toda reta pode ser expressada pela seguinte equação: **y=ax+b**.
  Com isso, podemos deixar nossa meta mais clara, precisamos encontrar **o melhor coeficiente angular da reta (a) e o melhor coeficiente linear (b)**.
- Para isso, vamos iniciar os coeficientes com valores aleatórios e vamos melhorando eles aos poucos. Faremos isso utilizando o método do gradiente de descida (falaremos mais dele mais para frente). Implementaremos o peso aleatório da seguinte forma:
+ Para isso, vamos iniciar os coeficientes com valores aleatórios e vamos melhorando eles aos poucos utilizando o método do gradiente de descida (falaremos mais dele mais para frente). Implementaremos o peso aleatório da seguinte forma:
 
 ```python
 import random   # o pacote random é necessário para gerar números aleatórios.
@@ -35,24 +35,11 @@ Imagine que você tenha começado a cozinhar há pouco tempo e não tem certeza 
 
 * O primeiro passo é encontrar o quadrado da diferença entre "y" (valor real) e "^y" (valor previsto). Caso nosso modelo seja perfeito, os dois termos serão iguais, logo o MSE será zero. Portanto, quanto mais próximo de zero o MSE, melhor nosso modelo.
 
-Ex: Acima previmos que três xícaras custam 30 reais, e é exatamente o que os dados dizem também, logo nossa MSE será zero.
+*Ex: Acima previmos que três xícaras custam 30 reais, e é exatamente o que os dados dizem também, logo nossa MSE será zero.*
 * Depois de encontrar o quadrado da diferença de todos os termos, iremos soma-los e dividir pelo número de termos, encontrando a média. Implementaremos da seguninte forma: 
 
 ```python
-def meanSquaredError(weights, dataset):
-  '''
-  Parâmetros:
-    - weights: Os pesos são os valores que geramos anteriormente, o "a" e "b".
-    - dataset: Lista com os valores "reais".
-  
-  Retorna:
-    - o erro quadratico médio de seu modelo atual.
-  '''
-  
-  squaredError = 0
-  for indc in dataset:
-      squaredError += (((weights[0]*indc[0])+weights[1]) - indc[1])**2    
-  return squaredError / (2*len(DS)) 
+
 ```
 
 ### Gradiente de descida:
