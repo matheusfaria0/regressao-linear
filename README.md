@@ -64,8 +64,14 @@ def erroQuadraticoMedio(Y, Y_true):
 
 ### Gradiente de descida:
 Agora que sabemos se nosso modelo está bom ou ruim, como podemos melhora-lo? Usaremos o método do gradiente de descida, são eles que fazem as inteligências artificiais aprenderem. Imagine que você é um alpinista e está em uma montanha muito alta e deseja chegar ao chão. Para isso você deve olhar ao seu redor e dar pequenos passos na direção que te levar na menor altura. O gradiente de descida faz exatamente isso, onde a altura seria o erro de nosso modelo. Ele é definido pela seguinte fórmula:
+
 ![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/sgd.png)
 
-A par
+Em suma, a parte da derivada serve simplesmente para indicar se você deve diminuir ou aumentar o valor dos parâmetros, o gráfico abaixo é de um coeficiente em função do erro, podemos perceber que se ele tivesse movido para a esquerda, seu erro apenas aumentaria, e esse não é nosso objetivo.
+O "J" da equação representa a função de custo, ou seja, o erro quadrático médio. Iremos multiplica-lo pela derivada e pelo **learning reate**. Teremos como produto o novo coeficiente, precisaremos atualiza-lo, **mas você precisa atualiza-los simultaneamente**, abaixo falarei mais sobre.
 
+![alt text](https://github.com/matheusfaria0/regressao-linear/blob/master/gradiente.png)
 
+* **_O que é learning rate?_** O learning rate é uma valor extremamente pequeno (normalmente algo em torno de 0.001) que é usado para não modificar drasticamente nosso modelo.
+
+* **_ATUALIZAR PESOS SIMULANEAMENTE:_** Sempre devemos atualizar os pesos simulaneamente, ou seja, imagine que nossa equação de reta atual seja "2x+5=y", notamos que ela não se encaixa bem em nossos dados e passamos ela pelo gradiente de descida, e encontramos que o novo "a" deve ser 2,3. Não devemos atualiza-lo por agora, precisamos calcular o novo "b", e depois atualiza-los simulataneamente.
